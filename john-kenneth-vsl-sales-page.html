@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Kenneth | Copy That Converts Coaches Into Client Magnets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0c0a;
+    --paper: #f5f0e8;
+    --cream: #ede7d9;
+    --gold: #b8963e;
+    --gold-light: #d4aa5a;
+    --rust: #8b3a2a;
+    --sage: #3d5a4c;
+    --warm-gray: #6b6459;
+    --divider: #c8bfaf;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+  .display { font-family: 'DM Serif Display', serif; font-style: italic; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  .container--wide { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 80px 0; }
+
+  /* ── RULING LINES ── */
+  .rule { width: 60px; height: 2px; background: var(--gold); margin: 24px auto; }
+  .rule--left { margin: 24px 0; }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--ink);
+    color: var(--gold-light);
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rust), var(--gold), var(--rust));
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 18px;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 900;
+    color: var(--paper);
+    max-width: 820px;
+    margin: 0 auto 28px;
+    line-height: 1.1;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 21px);
+    color: #b0a898;
+    max-width: 580px;
+    margin: 0 auto 60px;
+    line-height: 1.65;
+  }
+
+  /* ── VSL PLAYER ── */
+  .vsl-wrap {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    position: relative;
+  }
+
+  .vsl-frame {
+    background: #111;
+    aspect-ratio: 16/9;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vsl-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, #1a1208 0%, #000 100%);
+  }
+
+  .vsl-play {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s;
+  }
+
+  .vsl-frame:hover .vsl-play { transform: scale(1.05); }
+
+  .vsl-play-btn {
+    width: 80px; height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .vsl-play-btn svg { fill: var(--gold); width: 28px; height: 28px; margin-left: 4px; }
+
+  .vsl-label {
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .vsl-duration {
+    position: absolute;
+    bottom: 16px; right: 16px;
+    color: #888;
+    font-size: 13px;
+    z-index: 2;
+  }
+
+  /* ── CTA BUTTON ── */
+  .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn--large { font-size: 17px; padding: 22px 56px; }
+
+  .btn-sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #9a9088;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .section-problem {
+    background: var(--paper);
+    border-top: 1px solid var(--divider);
+  }
+
+  .section-problem h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 32px;
+  }
+
+  .section-problem h2 em { font-style: italic; color: var(--rust); }
+
+  .body-copy p { margin-bottom: 22px; color: #2a2520; }
+  .body-copy p:last-child { margin-bottom: 0; }
+
+  .callout {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--cream);
+  }
+
+  .callout p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── DARK SECTION ── */
+  .section-dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .section-dark .body-copy p { color: #c4bdb3; }
+  .section-dark .callout { background: #1a1810; border-left-color: var(--gold); }
+  .section-dark .callout p { color: var(--paper); }
+  .section-dark h2 { color: var(--paper); }
+  .section-dark h2 em { color: var(--gold-light); }
+  .section-dark .section-label { color: var(--gold-light); }
+
+  /* ── PAIN LIST ── */
+  .pain-list {
+    list-style: none;
+    margin: 32px 0;
+  }
+
+  .pain-list li {
+    padding: 16px 0 16px 32px;
+    border-bottom: 1px solid var(--divider);
+    position: relative;
+    color: #2a2520;
+  }
+
+  .pain-list li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .section-dark .pain-list li { color: #c4bdb3; border-bottom-color: #2a2520; }
+  .section-dark .pain-list li::before { color: var(--gold); content: '✓'; }
+
+  /* ── ORIGIN STORY ── */
+  .section-story { background: var(--cream); }
+
+  /* ── FRAMEWORK ── */
+  .framework-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 680px) { .framework-grid { grid-template-columns: 1fr; } }
+
+  .framework-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 36px 28px;
+  }
+
+  .framework-card:nth-child(2) { background: var(--rust); }
+  .framework-card:nth-child(3) { background: var(--sage); }
+
+  .framework-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.3;
+    margin-bottom: 12px;
+  }
+
+  .framework-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--gold-light);
+  }
+
+  .framework-card p { font-size: 15px; color: #c4bdb3; }
+
+  /* ── STATS BAND ── */
+  .stats-band {
+    background: var(--gold);
+    padding: 56px 24px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @media (max-width: 680px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: #5a4e2e;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* ── WHAT YOU GET ── */
+  .services-list { margin: 40px 0; }
+
+  .service-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--divider);
+    align-items: start;
+  }
+
+  .service-item:first-child { border-top: 1px solid var(--divider); }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .service-icon svg { fill: var(--gold); width: 22px; height: 22px; }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .service-desc { font-size: 16px; color: var(--warm-gray); line-height: 1.65; }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-wrap { margin: 48px 0; overflow-x: auto; }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  .compare-table th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .compare-table th:last-child { text-align: center; }
+
+  .compare-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--divider);
+    color: var(--warm-gray);
+    vertical-align: middle;
+  }
+
+  .compare-table td:first-child { font-weight: 500; color: var(--ink); }
+
+  .compare-table td:last-child { text-align: center; }
+
+  .compare-table tr:nth-child(even) td { background: var(--cream); }
+
+  .check { color: var(--sage); font-size: 18px; font-weight: 700; }
+  .cross { color: var(--rust); font-size: 18px; font-weight: 700; }
+
+  /* ── OFFER BOX ── */
+  .offer-box {
+    border: 2px solid var(--gold);
+    padding: 56px 48px;
+    margin: 48px 0;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .offer-box::before {
+    content: 'PARTNERSHIP MODEL';
+    position: absolute;
+    top: -12px;
+    left: 32px;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 3px 12px;
+  }
+
+  .price-display {
+    text-align: center;
+    padding: 36px 0;
+    border: 1px solid var(--divider);
+    margin: 32px 0;
+    background: var(--ink);
+  }
+
+  .price-zero {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .price-note {
+    color: #a0998f;
+    font-size: 14px;
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .price-rev {
+    font-size: 18px;
+    color: var(--paper);
+    margin-top: 16px;
+  }
+
+  /* ── PROCESS STEPS ── */
+  .steps { margin: 40px 0; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+    align-items: start;
+  }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    text-align: center;
+  }
+
+  .step-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step-desc { font-size: 16px; color: var(--warm-gray); }
+
+  /* ── GUARANTEE ── */
+  .guarantee-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px;
+    border: 1px solid #3a3020;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .guarantee-seal {
+    width: 100px; height: 100px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+    flex-direction: column;
+  }
+
+  .guarantee-seal span:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .guarantee-seal span:last-child {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* ── TWO OPTIONS CLOSE ── */
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 680px) { .options-grid { grid-template-columns: 1fr; } }
+
+  .option-card {
+    padding: 40px 32px;
+  }
+
+  .option-card:first-child {
+    background: var(--cream);
+    border: 1px solid var(--divider);
+  }
+
+  .option-card:last-child {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .option-card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .option-card:last-child h3 { border-bottom-color: #2a2520; color: var(--gold-light); }
+
+  .option-list { list-style: none; }
+  .option-list li { padding: 10px 0 10px 24px; position: relative; font-size: 15px; border-bottom: 1px solid var(--divider); }
+  .option-card:last-child .option-list li { border-bottom-color: #1e1c18; color: #c4bdb3; }
+  .option-list li::before { content: '→'; position: absolute; left: 0; color: var(--warm-gray); }
+  .option-card:last-child .option-list li::before { color: var(--gold); }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--paper); }
+
+  .faq-item {
+    border-bottom: 1px solid var(--divider);
+    padding: 0;
+  }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 24px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq-q:hover { color: var(--rust); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border: 1px solid var(--divider);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    font-family: monospace;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .faq-item.open .faq-icon { background: var(--ink); color: var(--gold); border-color: var(--ink); }
+
+  .faq-a {
+    display: none;
+    padding: 0 0 24px;
+    color: var(--warm-gray);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: #6b6459;
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 13px;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── STICKY CTA ── */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--ink);
+    border-top: 2px solid var(--gold);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.4s;
+    gap: 20px;
+  }
+
+  .sticky-bar.visible { transform: translateY(0); }
+
+  .sticky-text {
+    color: var(--paper);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .sticky-text strong { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .sticky-bar { flex-direction: column; align-items: stretch; text-align: center; }
+    .offer-box { padding: 32px 24px; }
+    .guarantee-box { padding: 32px 24px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SCARCITY BAND ── */
+  .scarcity {
+    background: var(--rust);
+    color: var(--paper);
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .scarcity strong { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">For Coaches & Course Creators Only — Read Every Word</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">The Empathy–Authority Framework</span>
+    <h1>Why Demonstrating Your Expertise Is Costing You <em>83% of Potential Clients</em></h1>
+    <p class="hero-sub">And the 3-step psychological framework that closes the gap in 30 days or less. Without spending months learning copywriting, hiring agencies that over-promise, or posting more content your audience scrolls past.</p>
+
+    <!-- VSL PLACEHOLDER -->
+    <div class="vsl-wrap">
+      <div class="vsl-frame" id="vslFrame" onclick="this.innerHTML='<div style=\'color:#888;font-size:15px;position:relative;z-index:2;\'>[ Embed your VSL here ]</div>'">
+        <div class="vsl-play">
+          <div class="vsl-play-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="vsl-label">Watch This Before Reading Further</span>
+        </div>
+        <span class="vsl-duration">~15 min</span>
+      </div>
+    </div>
+
+    <a href="#apply" class="btn btn--large">Book Your Free Copy Audit Call</a>
+    <span class="btn-sub">No pitch. No pressure. Just an honest 30-minute conversation.</span>
+  </div>
+</section>
+
+<!-- SCARCITY -->
+<div class="scarcity">
+  <strong>Only 2 partnership spots available this month.</strong> Next opening: January 2026.
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="section-problem fade-in">
+  <div class="container">
+    <span class="section-label">The Real Problem</span>
+    <h2>You're Not Failing at Marketing. <em>You're Succeeding at the Wrong Thing.</em></h2>
+    <div class="rule--left rule"></div>
+    <div class="body-copy">
+      <p>You've got the credentials. The certifications. The case studies. The testimonials from clients whose lives you've genuinely changed.</p>
+      <p>You're posting valuable content. You're showing up consistently. You're doing "all the marketing things" the gurus told you to do.</p>
+      <p>But the qualified leads aren't coming.</p>
+      <p>Or worse, they're watching your content, consuming your free stuff, telling you how "inspiring" you are. Then vanishing when it's time to invest.</p>
+    </div>
+
+    <div class="callout">
+      <p>"You lie awake at 2 a.m. wondering if you chose the wrong niche. Your bank account reminds you that building your brand doesn't pay the mortgage."</p>
+    </div>
+
+    <div class="body-copy">
+      <p>And here's the part that really stings: you know you can help people. You've seen the transformation. You've watched clients go from stuck to breakthrough because of what you taught them.</p>
+      <p>But here's what most coaches don't realize.</p>
+    </div>
+
+    <ul class="pain-list">
+      <li>The problem isn't your expertise. You have plenty of that.</li>
+      <li>The problem isn't your content. You create enough of it.</li>
+      <li>The problem isn't your niche. You've heard "niche down" a thousand times.</li>
+      <li>The problem is you're communicating like an expert to people who desperately need a guide.</li>
+    </ul>
+
+    <div class="body-copy">
+      <p>That gap, that invisible chasm between authority and empathy, is costing you 83% of potential clients who never reach out because they don't feel understood.</p>
+      <p><strong>This isn't about working harder. It's about closing The Empathy–Authority Gap.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-grid">
+    <div>
+      <span class="stat-num">83%</span>
+      <div class="stat-label">of potential clients never reach out because they don't feel understood</div>
+    </div>
+    <div>
+      <span class="stat-num">97%</span>
+      <div class="stat-label">of buyers aren't ready to buy when they first find you</div>
+    </div>
+    <div>
+      <span class="stat-num">42×</span>
+      <div class="stat-label">average ROI from email marketing done with the right psychology</div>
+    </div>
+    <div>
+      <span class="stat-num">0%</span>
+      <div class="stat-label">upfront. You only pay when your funnel generates revenue.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ORIGIN STORY -->
+<section class="section-story fade-in">
+  <div class="container">
+    <span class="section-label">Origin Story</span>
+    <h2>I Used to Think "Better Credentials" Meant "Better Copy"</h2>
+    <div class="rule--left rule"></div>
+    <div class="body-copy">
+      <p>A year ago, I made a mistake that almost cost me my copywriting career.</p>
+      <p>I was working with coaches and consultants who had real expertise and wanted to grow their businesses. They had the credentials. The experience. The transformational results. But their marketing wasn't working.</p>
+      <p>So I did what every copywriter does: I looked for the angle. Read the testimonials. Studied the competition. Mapped out the unique selling propositions.</p>
+      <p>Professional. Polished. Okay. Not terrible. Not great. Just okay.</p>
+      <p>Then I had a call that changed everything.</p>
+    </div>
+
+    <div class="callout">
+      <p>"I was talking to Holly McLean, a parenting consultant with 35 years of experience and nine kids of her own. She had incredible testimonials. But her consultation business was generating almost no income."</p>
+    </div>
+
+    <div class="body-copy">
+      <p>I looked at her existing sales page. It was professionally written. Hit all the right marketing points. Showcased her credentials beautifully.</p>
+      <p>But it felt like every other parenting expert's page. Generic empathy. Surface-level pain points. Vague promises of "support."</p>
+      <p>The raw, specific struggle, the visceral desperation of a parent at 2 a.m., was nowhere in her copy.</p>
+      <p>A parenting consultant talks about "behavioral modification" and "consistent boundaries." But her prospects Google: <em>"My toddler is a nightmare and I'm losing my mind."</em></p>
+      <p>That gap between professional expertise and desperate searching is where most coaching marketing dies.</p>
+      <p><strong>My job isn't to make you sound more credible. My job is to build a bridge between your expertise and your prospect's raw, unfiltered desperation.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="section-dark fade-in">
+  <div class="container">
+    <span class="section-label">The Solution</span>
+    <h2>The Empathy–Authority Framework: <em>3 Stages That Close the Gap</em></h2>
+    <div class="rule--left rule"></div>
+    <div class="body-copy">
+      <p>After that breakthrough, I reverse-engineered every piece of high-converting copy I could find. And I discovered one thing the highest-converting copy always does.</p>
+      <p>It doesn't start with authority. It starts with empathy. It doesn't lead with credentials. It leads with pain recognition.</p>
+    </div>
+
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="num">01</div>
+        <h3>Pain Amplification</h3>
+        <p>Before you can be the solution, you have to prove you understand the problem better than your prospect does. Not symptoms. The emotional weight behind them.</p>
+      </div>
+      <div class="framework-card">
+        <div class="num">02</div>
+        <h3>Solution Bridge</h3>
+        <p>Show them why their current approach isn't working and why your mechanism is different. Not just what your solution does, but why it's the only logical path forward.</p>
+      </div>
+      <div class="framework-card">
+        <div class="num">03</div>
+        <h3>Authority Confirmation</h3>
+        <p>Now, and only now, bring in the credentials. But you don't lead with them. You use them to confirm what they already believe: that you understand them and can solve their problem.</p>
+      </div>
+    </div>
+
+    <div class="body-copy">
+      <p>When you close The Empathy–Authority Gap, the numbers shift fast:</p>
+    </div>
+
+    <ul class="pain-list">
+      <li>Email open rates increase 40–60% because subject lines speak to feelings, not features</li>
+      <li>Click-through rates double or triple because your copy creates genuine curiosity</li>
+      <li>Discovery call bookings jump 2–5× because prospects feel understood before they talk to you</li>
+      <li>Sales conversion rates improve 30–50% because you're confirming what they already want to believe</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="fade-in">
+  <div class="container">
+    <span class="section-label">What You Get</span>
+    <h2>Done-For-You Copy. Every Word Engineered to Convert.</h2>
+    <div class="rule--left rule"></div>
+    <div class="body-copy">
+      <p>This isn't a course. This isn't a template library. This isn't "done-with-you" where you still do most of the heavy lifting. This is done-for-you strategic copywriting specifically built for coaches and course creators.</p>
+    </div>
+
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <div>
+          <div class="service-name">Ad &amp; YouTube Scripts</div>
+          <p class="service-desc">Hook viewers in the first 3 seconds using the Hidden Truth and Unbelievable Question frameworks. Built to stop scrolling and start converting.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <div class="service-name">Email Sequences &amp; Campaigns</div>
+          <p class="service-desc">Automated nurture sequences that take cold leads and warm them into booked calls. Launch campaigns for your next offer. Weekly emails that keep your list from going cold.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <div>
+          <div class="service-name">Landing Pages</div>
+          <p class="service-desc">Psychologically-engineered opt-in pages that create an irresistible urge to know more. Every visitor feels compelled to exchange their email for your offer.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <div>
+          <div class="service-name">Sales Pages</div>
+          <p class="service-desc">Long-form copy that grabs attention from the first word, builds an unstoppable case for action, and makes readers feel their pain in every fiber before showing them the exit.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        </div>
+        <div>
+          <div class="service-name">VSL Scripts</div>
+          <p class="service-desc">10–15 minute video sales letter scripts that walk prospects from skepticism to ready-to-buy. Every word chosen to keep them watching and move them closer to action.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <div>
+          <div class="service-name">Copy &amp; Funnel Audits</div>
+          <p class="service-desc">I identify exactly why your funnel isn't converting, where the leaks are, and what to fix first for the fastest results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="fade-in" style="background: var(--cream); padding: 80px 0;">
+  <div class="container">
+    <span class="section-label">How This Compares</span>
+    <h2>Revenue Share vs. Every Other Option</h2>
+    <div class="rule--left rule"></div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Approach</th>
+            <th>Upfront Cost</th>
+            <th>Psychology-Based</th>
+            <th>Ongoing Optimization</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Kenneth (Revenue Share)</td>
+            <td>$0</td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td>Zero</td>
+          </tr>
+          <tr>
+            <td>Generic Agency</td>
+            <td>$15k–$50k</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Monthly Retainer Copywriter</td>
+            <td>$2k–$5k/mo</td>
+            <td>Sometimes</td>
+            <td>Sometimes</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>Cheap Freelancer</td>
+            <td>$500–$2k</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>DIY (Doing It Yourself)</td>
+            <td>Your time</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td>High (opportunity cost)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER STRUCTURE -->
+<section id="offer" class="fade-in">
+  <div class="container">
+    <span class="section-label">The Offer</span>
+    <h2>Zero Upfront. 20% of Revenue Generated.</h2>
+    <div class="rule--left rule"></div>
+
+    <div class="body-copy">
+      <p>I don't get paid unless your funnel makes you money. That's not a gimmick. It's how I structure every partnership, because my income depends entirely on your results.</p>
+    </div>
+
+    <div class="offer-box">
+      <div class="price-display">
+        <span class="price-zero">$0</span>
+        <p class="price-note">Upfront. No deposits. No retainers. No consultation fees.</p>
+        <p class="price-rev">20% of revenue generated through your funnel, paid monthly.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Foundation — Month 1</div>
+            <p class="step-desc">Deep dive discovery session. Strategic messaging framework. Complete lead magnet funnel or sales page + VSL. Unlimited revisions for 90 days. Technical implementation guidance.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-name">Optimization — Months 2–6</div>
+            <p class="step-desc">Monthly YouTube scripts tied to your funnel. Weekly email campaigns. Performance analysis and copy optimization based on real data. Ongoing support.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-name">Scale — Month 7+</div>
+            <p class="step-desc">Continued monthly content creation. Funnel expansion based on what's converting. New angles as your audience awareness evolves. Partnership continues as long as both parties benefit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-copy">
+      <p>Let's say your consultation packages are $500 each. Month 1, the funnel generates 5 bookings. You keep $2,000. I earn $500. By month 6, if it generates 20 bookings, you keep $8,000 and I earn $2,000. You get 80% of revenue you weren't generating before. I only eat when you do.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="fade-in" style="background: var(--cream);">
+  <div class="container">
+    <div class="guarantee-box">
+      <div class="guarantee-seal">
+        <span>90</span>
+        <span>Days</span>
+      </div>
+      <h2 style="color: var(--paper); margin-bottom: 16px;">The Partnership Guarantee</h2>
+      <p style="color: #a0998f; max-width: 540px; margin: 0 auto; font-size: 17px; line-height: 1.7;">If, after 90 days, your funnel hasn't generated measurable improvement, I continue optimizing at no cost until it does. I don't give up on funnels that aren't converting yet. And remember: I only get paid when you get paid. Your success is literally my only income from this partnership.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO APPLY -->
+<section id="apply" class="section-dark fade-in">
+  <div class="container">
+    <span class="section-label">How to Apply</span>
+    <h2>Current Availability: <em>2 Spots This Month</em></h2>
+    <div class="rule--left rule"></div>
+    <div class="body-copy">
+      <p>I can't write effective copy for 15 clients simultaneously. Deep research takes time. Strategic messaging requires focus. Ongoing optimization demands attention. I work with 3 service providers at a time. Right now, 2 spots are open for new partnerships starting this month.</p>
+      <p>The only requirement: you must have existing clients and testimonials. I can't build a messaging framework without real client stories.</p>
+    </div>
+
+    <div style="text-align: center; padding: 48px 0;">
+      <a href="https://calendly.com/johnkenneth-villarba-eguia/30min" target="_blank" class="btn btn--large">Book Your Free Copy Audit Call</a>
+      <span class="btn-sub" style="color: #6b6459;">Step 1 of 4. 30 minutes. I'll review your current marketing before we talk.</span>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="color: var(--gold);">1</div>
+        <div>
+          <div class="step-name" style="color: var(--paper);">Application Call — 30 min</div>
+          <p class="step-desc">An honest conversation about where your marketing is failing and whether revenue share makes sense for your model. No pitch. No pressure.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="color: var(--gold);">2</div>
+        <div>
+          <div class="step-name" style="color: var(--paper);">Strategy Session — 2–3 hrs</div>
+          <p class="step-desc">I interview you about your clients' real stories. We map the messaging framework and agree on deliverables.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="color: var(--gold);">3</div>
+        <div>
+          <div class="step-name" style="color: var(--paper);">Copy Creation — 3–4 weeks</div>
+          <p class="step-desc">I write everything. You review and request revisions. We refine until it authentically represents you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="color: var(--gold);">4</div>
+        <div>
+          <div class="step-name" style="color: var(--paper);">Launch &amp; Optimize — Ongoing</div>
+          <p class="step-desc">We implement the funnel, track real data, optimize based on what converts, and scale what works.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO OPTIONS CLOSE -->
+<section class="fade-in">
+  <div class="container">
+    <span class="section-label">Your Decision</span>
+    <h2>You Have Two Options</h2>
+    <div class="rule--left rule"></div>
+
+    <div class="options-grid">
+      <div class="option-card">
+        <h3>Option 1: Keep Going As-Is</h3>
+        <ul class="option-list">
+          <li>Keep posting content that demonstrates your expertise</li>
+          <li>Keep hoping the "right" clients will eventually find you</li>
+          <li>Keep wondering why competitors with less experience book more clients</li>
+          <li>Keep feeling that knot when you check your bank account</li>
+          <li>Keep doing what you've been doing and getting what you've been getting</li>
+        </ul>
+      </div>
+      <div class="option-card">
+        <h3>Option 2: Close the Gap</h3>
+        <ul class="option-list">
+          <li>Finally understand why your expertise isn't translating to clients</li>
+          <li>Get copy that makes your ideal clients feel viscerally understood</li>
+          <li>Watch your discovery call bookings multiply</li>
+          <li>Stop guessing. Start converting.</li>
+          <li>Pay nothing until your funnel generates revenue</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding-top: 16px;">
+      <p style="margin-bottom: 24px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--warm-gray);">Only 2 spots available this month.</p>
+      <a href="https://calendly.com/johnkenneth-villarba-eguia/30min" target="_blank" class="btn btn--large">Book Your Copy Audit Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section fade-in">
+  <div class="container">
+    <span class="section-label">Questions</span>
+    <h2>Frequently Asked Questions</h2>
+    <div class="rule--left rule"></div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">How is this different from other copywriters? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Most copywriters write generic copy and hope it works. I specialize exclusively in coaches and course creators. I understand the specific psychology of your audience, the trust deficit, the skepticism, the fear of being sold to. Every word serves a purpose. Nothing is filler. And I only get paid when my copy actually generates revenue for you.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">What if I don't have an email list yet? <span class="faq-icon">+</span></button>
+      <div class="faq-a">That's actually ideal timing. Most coaches make the mistake of growing a list with the wrong messaging, then wonder why it doesn't convert. We build your foundation correctly from day one so every piece of copy attracts and nurtures your ideal clients from the start.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">How long does the whole process take? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Discovery call happens within 1 week of booking. First draft delivered within 10–14 days. Revisions completed within 1 week of your feedback. Total timeline from start to final delivery: 3–4 weeks.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">I've been burned by agencies before. How do I know you're different? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Valid concern. Here's how I'm different: I explain the psychology behind every word so you understand why it works. I don't over-promise. If your offer has fundamental issues, I'll tell you honestly before we go further. My guarantee puts my results where my mouth is. And I don't disappear after delivery.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">Do I need expensive software or fancy funnels? <span class="faq-icon">+</span></button>
+      <div class="faq-a">No. Good copy works on any platform: Mailchimp, ConvertKit, Kajabi, even basic WordPress. I can recommend simple, affordable tools if you need them. But the copy is what converts, not the tech stack.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">Can you guarantee specific revenue results? <span class="faq-icon">+</span></button>
+      <div class="faq-a">No ethical copywriter can guarantee revenue. Anyone who does is lying. What I can guarantee is that your copy will be strategically sound, psychologically optimized, and significantly better than what you have now. Factors like your offer quality, pricing, and delivery are outside my control, but I stay in the partnership until we find what works.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-q">What if I only need one email sequence, not a full funnel? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Email me directly. We can start with a single primary asset, whether that's one email sequence, one sales page, or a set of ad scripts. You're not forced into more than you need. If you want to expand later, we can always do that.</div>
+    </div>
+
+    <div style="text-align: center; padding-top: 56px;">
+      <a href="https://calendly.com/johnkenneth-villarba-eguia/30min" target="_blank" class="btn btn--large">Book Your Free Copy Audit Call</a>
+      <span class="btn-sub">Still have questions? Email <a href="mailto:johnkenneth.villarba.eguia@gmail.com" style="color: var(--gold); text-decoration: none;">johnkenneth.villarba.eguia@gmail.com</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">© 2025 John Kenneth Villarba Eguia — Freelance Copywriter for Coaches &amp; Course Creators</p>
+  <p>
+    <a href="mailto:johnkenneth.villarba.eguia@gmail.com">Email</a> &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/john-kenneth-eguia-73aa5434a" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+    <a href="https://calendly.com/johnkenneth-villarba-eguia/30min" target="_blank">Book a Call</a>
+  </p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-text"><strong>2 spots left this month.</strong> Next opening: January 2026.</div>
+  <a href="https://calendly.com/johnkenneth-villarba-eguia/30min" target="_blank" class="btn">Book Your Free Call</a>
+</div>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(item) {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-icon').textContent = '+';
+    });
+    if (!wasOpen) {
+      item.classList.add('open');
+      item.querySelector('.faq-icon').textContent = '−';
+    }
+  }
+
+  // Scroll animations
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Sticky bar
+  const sticky = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
